@@ -4,14 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+
+
+     <style>
+       
+
+        form {
+            width: 400px;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .clear-btn {
+            background-color: #dc3545;
+            color: white;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
-     
+     <header>
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
 
         <div class="container"> 
 
-            <a class="navbar-brand" href="index.html">My Website</a> 
+            <a class="navbar-brand" href="index.html">GAMERGRID</a> 
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
 
@@ -65,9 +132,38 @@
       </nav>  
         
     </nav>
-           
+    </header>
+
+    
+    <main>
+        
+
+        <form action="acknowledgement.html" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <div class="buttons">
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="clear-btn">Clear</button>
+            </div>
+        </form>
+
+
+    </main>
+
+
     <footer>
-        <p>*copy; 2026 designed by Gabriel Ockhuizen</p>
+        <p>&copy; 2026 designed by Gabriel Ockhuizen</p>
     </footer>
+
+
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
 </body>
 </html>

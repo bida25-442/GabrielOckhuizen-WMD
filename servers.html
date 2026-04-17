@@ -4,13 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servers</title>
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="styles.css">
+
+
+<style>
+    .servers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.2rem;
+    }
+
+    .server-card {
+      background: rgba(12, 18, 28, 0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 2rem;
+      border: 1px solid rgba(72, 120, 200, 0.35);
+      padding: 1.8rem;
+      transition: transform 0.25s ease, box-shadow 0.25s;
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .server-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(100, 160, 255, 0.7);
+      box-shadow: 0 25px 35px -12px rgba(0, 30, 70, 0.6);
+    }
+
+    .game-icon {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .game-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin: 0.2rem 0 0.8rem;
+      letter-spacing: -0.3px;
+    }
+
+    .server-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 1rem 0 0.9rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.5rem 1rem;
+      border-radius: 60px;
+      width: fit-content;
+    }
+
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #2ecc71;
+      box-shadow: 0 0 6px #2ecc71;
+    }
+
+    .status-dot.offline {
+      background-color: #e74c3c;
+      box-shadow: 0 0 5px #e74c3c;
+    }
+
+    .status-dot.maintenance {
+      background-color: #f39c12;
+      box-shadow: 0 0 5px #f39c12;
+    }
+
+    .status-text {
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .server-details {
+      margin: 1.1rem 0;
+      font-size: 0.9rem;
+      color: #cbd5f0;
+      border-top: 1px dashed rgba(100, 148, 237, 0.3);
+      padding-top: 0.9rem;
+    }
+
+    .server-details p {
+      margin: 0.45rem 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .region-badge {
+      background: #1e2a3e;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .ping-info {
+      font-family: monospace;
+      font-size: 0.85rem;
+      background: #0b0f17;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+    }
+
+  
+
+  
+    @media (max-width: 800px){
+      .container {
+        padding: 1rem 1.2rem;
+      }
+      .servers-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 1.2rem;
+      }
+      .page-headline h1 {
+        font-size: 2rem;
+      }
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .global-status-badge {
+      background: #0b111f60;
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.8rem;
+      border-left: 3px solid #3e7ad9;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+  </style>
 </head>
 <body>
+    <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
 
         <div class="container"> 
 
-            <a class="navbar-brand" href="index.html">My Website</a> 
+            <a class="navbar-brand" href="index.html">GAMERGRID</a> 
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
 
@@ -65,8 +215,112 @@
       </nav>  
         
     </nav>
+    </header>
+
+    <main>
+         <div class="main-content">
+    <div class="page-headline">
+
+
+      
+      <h1>Server Command Center</h1>
+      <p>Real-time status for your favorite worlds — Naraka, Oblivion, Assassin's Creed & Where Winds Meet. Two-column live grid.</p>
+    </div>
+
+     
+    <div class="servers-grid">
+      
+      <div class="server-card">
+        <div class="game-title">Naraka: Bladepoint</div>
+        <div class="server-status">
+          <div class="status-dot"></div>
+          <span class="status-text">ONLINE • 99% UPTIME</span>
+        </div>
+        <div class="server-details">
+          <p>Region: <span class="region-badge">EU Central (Frankfurt)</span> + <span class="region-badge">NA East</span></p>
+          <p>Current players: <strong class="dynamic-players" id="narakaPlayers">2,847</strong> online</p>
+          <p>Avg ping: <span class="ping-info" id="narakaPing">34 ms</span> | Packet loss: 0.1%</p>
+          <p>Version: <span class="region-badge">Season: Fated Clash</span></p>
+        </div>
+        <div class="action-btn"><span>VIEW SERVER METRICS</span></div>
+      </div>
+
+      
+
+
+
+
+      <div class="server-card">
+        <div class="game-title">The Elder Scrolls IV: Oblivion</div>
+        <div class="server-status">
+          <div class="status-dot"></div>
+          <span class="status-text">ONLINE • STABLE</span>
+        </div>
+        <div class="server-details">
+          <p>Region: <span class="region-badge">North America (Central)</span> / <span class="region-badge">EU West</span></p>
+          <p>Active adventurers: <strong class="dynamic-players" id="oblivionPlayers">1,203</strong> (Co-op / server browser)</p>
+          <p>Avg ping: <span class="ping-info" id="oblivionPing">52 ms</span> | Community shard: Cyrodiil</p>
+          <p>Special: <span class="region-badge">Shivering Isles active</span></p>
+        </div>
+        <div class="action-btn"><span>REALMS STATUS</span></div>
+      </div>
+
+    
+
+
+
+      <div class="server-card">
+        
+        <div class="game-title">Assassin's Creed</div>
+        <div class="server-status">
+          <div class="status-dot"></div>
+          <span class="status-text">ONLINE • HIGH TRAFFIC</span>
+        </div>
+        <div class="server-details">
+          <p>Region: <span class="region-badge">Worldwide (Global matchmaking)</span></p>
+          <p>Current sync nodes: <strong class="dynamic-players" id="acPlayers">5,212</strong> active agents</p>
+          <p>Avg latency: <span class="ping-info" id="acPing">41 ms</span> | Server load: 62%</p>
+          <p>Featured mode: <span class="region-badge">Mirage Challenges</span> + Co-op events</p>
+        </div>
+        <div class="action-btn"><span>MATCHMAKING STATUS</span></div>
+      </div>
+
+      
+
+
+
+      <div class="server-card">
+        <div class="game-title">Where Winds Meet</div>
+        <div class="server-status">
+          <div class="status-dot maintenance"></div>
+          <span class="status-text">MAINTENANCE • UPDATE 2.1</span>
+        </div>
+        <div class="server-details">
+          <p>Region: <span class="region-badge">Asia (Shanghai)</span> + <span class="region-badge">NA West</span></p>
+          <p>Scheduled restart: <strong id="windsCountdown">in 45 min</strong> | ETA 01:30 UTC</p>
+          <p>Expected ping after patch: <span class="ping-info" id="windsPing">~28 ms</span></p>
+          <p>Patch notes: <span class="region-badge">Windfall Festival & new class</span></p>
+        </div>
+        <div class="action-btn"><span>MAINTENANCE TRACKER</span></div>
+      </div>
+    </div>
+
+
+    <div style="margin-top: 2.2rem;">
+      <div class="global-status-badge">
+        <span></span> Global network stable | Last heartbeat: just now | All game services operational except scheduled maintenance for "Where Winds Meet"
+      </div>
+    </div>
+  </div>
+    </main>
+
+
     <footer>
-        <p>*copy; 2026 designed by Gabriel Ockhuizen</p>
+        <p>&copy; 2026 designed by Gabriel Ockhuizen</p>
     </footer>
+
+    
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
 </body>
 </html>
