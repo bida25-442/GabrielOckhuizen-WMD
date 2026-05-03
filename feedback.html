@@ -1,169 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+   
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
 
+   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-
-     <style>
-       
-
-        form {
-            width: 400px;
-            margin: auto;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        textarea {
-            height: 120px;
-            resize: none;
-        }
-
-        .buttons {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .submit-btn {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .clear-btn {
-            background-color: #dc3545;
-            color: white;
-            margin-right: 10px;
-        }
-
-        button:hover {
-            opacity: 0.9;
-        }
-    </style>
-</head>
-<body>
-     <header>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
-
-        <div class="container"> 
-
-            <a class="navbar-brand" href="index.html">GAMERGRID</a> 
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
-
-                <span class="navbar-toggler-icon"></span> 
-
-            </button> 
-
-            <div class="collapse navbar-collapse" id="navbarNav"> 
-
-                <ul class="navbar-nav"> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="index.html">Home</a> 
-
-                    </li> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="about us.html">About</a> 
-
-                    </li> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="servers.html">Servers</a> 
-
-                    </li> 
-
-                    
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="news&events.html">News&Events</a> 
-
-                    </li> 
-
-                    
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="community.html">Community</a> 
-
-                    </li> 
-
-                   
-                </ul> 
-
-            </div> 
-
-        </div> 
-
-      </nav>  
-        
-    </nav>
-    </header>
+    body {
+      background: linear-gradient(145deg, #0b0e17 0%, #0f121d 100%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #eef2ff;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
     
-    <main>
-        
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
 
-        <form action="acknowledgement.html" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    
+    .site-header {
+      padding: 20px 0 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 13, 27, 0.7);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
 
-            <div class="buttons">
-                <button type="submit" class="submit-btn">Submit</button>
-                <button type="reset" class="clear-btn">Clear</button>
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #cfd9ff;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links a:hover {
+      color: #ff6b6b;
+      text-shadow: 0 0 4px rgba(255, 107, 107, 0.4);
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 56px 0 80px;
+    }
+
+    .feedback-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .feedback-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #f9f9ff, #bbbdff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .feedback-header p {
+      font-size: 1.2rem;
+      color: #a7b1e0;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .feedback-card {
+      background: rgba(18, 22, 35, 0.75);
+      backdrop-filter: blur(2px);
+      border-radius: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px 36px;
+      max-width: 860px;
+      margin: 0 auto 56px auto;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s;
+    }
+
+    .form-group {
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: #cdd6ff;
+    }
+
+    label .required {
+      color: #ff7b72;
+      margin-left: 4px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: #0f121e;
+      border: 1.5px solid #2a2f45;
+      border-radius: 20px;
+      font-size: 1rem;
+      color: #f0f3ff;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #ff6b6b;
+      box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+      background: #13172a;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .rating-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      background: #0c0f1a;
+      padding: 12px 16px;
+      border-radius: 60px;
+      border: 1px solid #2a2f45;
+    }
+
+    .rating-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      padding: 6px 16px;
+      border-radius: 40px;
+      transition: 0.1s;
+      cursor: pointer;
+    }
+
+    .rating-option input {
+      width: 20px;
+      height: 20px;
+      accent-color: #ff5e5e;
+      margin: 0;
+      transform: scale(1);
+    }
+
+    .rating-option label {
+      margin: 0;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .row-2cols {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .row-2cols .form-group {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .checkbox-group input {
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      accent-color: #ff5e5e;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .submit-btn {
+      background: linear-gradient(95deg, #ff4d4d, #c72a2a);
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 44px;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(199, 42, 42, 0.3);
+      letter-spacing: 0.5px;
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(95deg, #ff6767, #e03a3a);
+      transform: scale(0.98);
+      box-shadow: 0 6px 14px rgba(255, 77, 77, 0.4);
+    }
+
+    
+    .form-feedback-msg {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 500;
+      padding: 12px;
+      border-radius: 60px;
+      transition: 0.2s;
+    }
+
+    .success-msg {
+      background: rgba(46, 184, 104, 0.2);
+      border: 1px solid #2eb868;
+      color: #b3ffcf;
+    }
+
+    .error-msg {
+      background: rgba(255, 80, 80, 0.15);
+      border: 1px solid #ff6b6b;
+      color: #ffb7b7;
+    }
+
+    
+    .community-feedback-preview {
+      max-width: 860px;
+      margin: 0 auto;
+      background: rgba(8, 11, 22, 0.6);
+      border-radius: 2rem;
+      padding: 28px 32px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .community-feedback-preview h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .testimonial-item {
+      background: #10131f;
+      border-radius: 1.5rem;
+      padding: 18px 22px;
+      border-left: 4px solid #ff6363;
+    }
+
+    .testimonial-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .testimonial-rating {
+      color: #ffbc6e;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .testimonial-text {
+      color: #cbd5ff;
+      margin: 10px 0 6px;
+      font-style: italic;
+    }
+
+    .testimonial-category {
+      font-size: 0.75rem;
+      color: #8f9bb5;
+      text-transform: uppercase;
+    }
+
+    .site-footer {
+      background: #070a12;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 36px 0 28px;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      color: #7e89b0;
+      font-size: 0.85rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      color: #a9b3df;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #ff7a7a;
+    }
+
+    .social-icons span {
+      margin-right: 12px;
+      font-size: 0.85rem;
+      color: #9aa3cc;
+    }
+
+  </style>
+
+
+  
+    
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <div class="logo-area">
+          <i class="fas fa-gamepad logo-icon">GG</i>
+          <span class="logo-text">GamerGrid</span>
+        </div>
+        <a class="navbar-brand" href="index.html"></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about us.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="servers.html">Servers</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="news&events.html">News&Events</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="community.html">Community</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.html">Feedback</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="feedback-header">
+        <h1>your feedback matters</h1>
+        <p>Help us shape the ultimate gaming experience-share your thoughts, suggestions, or bug reports!</p>
+      </div>
+
+      <div class="feedback-card">
+        <form id="feedbackForm">
+          <div class="row-2cols">
+            <div class="form-group">
+              <label>Full name<span class="required">*</span></label>
+              <input type="text" id="fullName" placeholder="e.g., Aiden Stroke" required>
             </div>
+            <div class="form-group">
+              <label>Email address<span class="required">*</span></label>
+              <input type="email" id="email" placeholder="player@GamerGrid.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Feedback category</label>
+            <select id="category">
+              <option value="General">General feedback</option>
+              <option value="Bug Report">Bug report</option>
+              <option value="Feature Request">Feature request</option>
+              <option value="Server Issue">Server / performance</option>
+              <option value="Community">Community & events</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Rate your experience</label>
+            <div class="rating group" id="ratingGroup">
+              <div class="rating-option">
+                <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">1</label>
+              </div>
+
+              <div class="rating-option">
+                <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">2</label>
+              </div>
+
+               <div class="rating-option">
+                <input type="radio" name="rating" value="3" id="rate3"><label for="rate2">3</label>
+              </div>
+
+               <div class="rating-option">
+                <input type="radio" name="rating" value="4" id="rate4"><label for="rate2">4</label>
+              </div>
+
+              <div class="rating-option">
+                <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">5</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Your message<span class="required">*</span></label>
+        
+          <textarea id="message" placeholder="Tell us what you love, what needs improvement or any issues you faced..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="newsletter">
+              <label for="newsletter">I'd like to receive updates about news, events, and server status</label>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Feedback</button>
+          <div id="formStatus" class="form-feedback-msg"></div>
+
         </form>
+    </div>
+
+    <div class="community-feedback-preview">
+      <h3>Latest Community Voices</h3>
+      <div class="testimonial-list" id="recentFeedbackList">
+        <div class="testimonial-item">
+          <div class="testimonial-header">
+            <span class="testimonial-name">Zoe "Snowmist" Liu</span>
+            <span class="testimonial-rating">5</span>
+          </div>
+          <div class="testimonial-text">GamerGrid's server stability is insane! The new event was fire. Keep it up!</div>
+          <div class="testimonial-category">Feature Request. 2 days ago</div>
+        </div>
+      </div>
+    
+
+    <div class="testimonial-item">
+      <div class="testimonial-header">
+        <span class="testimonial-name">Makrov "RogueM" Knight</span>
+      </div>
+      <span class="testimonial-rating">4</span>
+      <div class="testimonial-text">"matchmacking improved a lot. Would love more community tournaments though!"</div>
+      <div class="testimonial-category">Community. 5 days ago</div>
+    </div>
+
+    <div class="testimonial-item">
+      <div class="testimonial-header">
+        <span class="testimonial-name">Inya "Nyx" Chen</span>
+        <span class="testimonial-rating">5</span>
+      </div>
+    <div class="testimonial-text">"The dashboard and ping are top-tier. Best grid gaming platform!"</div>
+    <div class="testimonial category">General. 1 week ago</div>
+    </div>
+    </div>
+    
+  </div>
+  <p style="font-size: 0.8rem; text-align: right; margin-top: 14px; color: #8890b5;"></p>
+</div>
+</div>
+
+<section class="contact-section" style="max-width: 860px; margin: 48px auto 0; padding: 0 0 56px;">
+
+  <div class="feedback-header" style="margin-bottom: 36px;">
+    <h1 style="font-size: 2.2rem">get in touch</h1>
+    <p>Prefer a direct line? Then reach us through any of  the channels below.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;" class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon"></div>
+      <div class="contact-info">
+        <h4>Email Support</h4>
+        <p>support@gamergrid.com</p>
+        <span>Response within 24hours</span>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon"></div>
+      <div class="contact-info">
+        <h4>Bug Reports</h4>
+        <p>bugs@gamergrid.com</p>
+        <span>Technical issue &amp; crashes</span>
+      </div>
+    </div>
 
 
-    </main>
+  <div class="hours-info">
+    <h4>Support hours</h4>
+    <p><span class="status-dot"></span>Mon-Fri, 8am-7pm UTC</p>
+    <p style="margin-top: 4px; font-size: 0.82rem; color: #7e89b0">Weekend: Discord Only</p>
+  </div>
+</div>
+
+</section>
+
+  </main>
 
 
-    <footer>
-        <p>&copy; 2026 designed by Gabriel Ockhuizen</p>
-    </footer>
+<footer style="margin-top: auto; background: #070a12; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 36px 0 28px;">
+  <p style="text-align: center; color: #7e89b0; font-size: 0.85rem;">&copy; 2026 designed by Gabriel Ockhuizen</p>
+</footer>
 
-
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
 </body>
 </html>

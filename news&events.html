@@ -5,16 +5,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News&Events</title>
 
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 
+    <style>
+       h1 {
+        font-size: 3.4rem;
+        font-weight: 800;
+        background: linear-gradient(125deg, #ffffff, #8bbaff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 16px;
+        letter-spacing: normal;
+       }
+
+       .page-headline {
+        text-align: center;
+        margin-bottom: normal;
+       }
+
+       .page-headline p {
+        font-size: 1.2rem;
+        color: #a6b3d6;
+        max-width: 650px;
+        margin: 0 auto;
+        border-top: 1px solid rgba(78, 159, 255, 0.3);
+        display: inline-block;
+        padding-top: 12px;
+       }
+
+       .section-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+        padding-left: 1rem;
+        border-left: 4px solid #3e7ad9;
+       }
+
+       .news-card {
+        background: rgba(12, 18, 28, 0.75);
+        backdrop-filter: blur(10px);
+        border-radius: 1.2rem;
+        border: 1px solid rgba(72, 120, 200, 0.35);
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+       }
+
+       .news-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(100, 160, 255, 0.7);
+        box-shadow: 0 25px 35px -12px rgba(0, 30, 70, 0.6);
+       }
+
+       .news-card-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        flex-shrink: 0;
+       }
+
+       .news-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+       }
+
+       .news-card:hover .news-card-image img {
+        transform: scale(1.05);
+       }
+
+       .news-card-body {
+        padding: 1.2rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+       }
+
+       .news-tag {
+        display: inline-block;
+        background: rgba(62, 122, 217, 0.2);
+        border: 1px solid rgba(62, 122, 217, 0.2);
+        color: #8bbaff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-bottom: 0.75rem;
+       }
+
+       .news-tag.tag-update {
+        background: rgba(46, 204, 113, 0.15);
+        border-color: rgba(46, 204, 113, 0.4); 
+        color: #2ecc71;
+       }
+
+       .news-tag.tag-event {
+        background: rgba(243, 156, 18, 0.15);
+        border-color: rgba(243, 156, 18, 0.4); 
+        color: #f39c12;
+       }
+
+       .news-tag.tag-patch {
+        background: rgba(155, 89, 182, 0.15);
+        border-color: rgba(155, 89, 182, 0.4); 
+        color: #c39bd3;
+       }
+
+       .news-tag.tag-update {
+        background: rgba(231, 76, 60, 0.15);
+        border-color: rgba(231, 76, 60, 0.4); 
+        color: #e74c3c;
+       }
+
+       .news-card-body h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 0.6rem;
+       }
+
+       .news-card-body p {
+         font-size: 0.9rem;
+        color: #a6b3d6;
+        line-height: 1.6;
+        flex: 1;
+       }
+
+       .news-date {
+        font-size: 0.78;
+        color: #5a6a8a;
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+        border-top: 1px dashed rgba(100, 148, 237, 0.25)
+       }
+
+       .news-featured {
+        background: rgba(12, 18, 28, 0.75);
+        backdrop-filter: blur(10px);
+        border-radius: 1.2rem;
+        border: 1px solid rgba(72, 120, 200, 0.35);
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        margin-bottom: 2.5rem;
+        transition: transform 0.25s ease, box-shadow 0.25s;
+       }
+
+       .news-featured:hover {
+        transform: translateY(-4PX);
+        border-color: rgba(100, 160, 255, 0.7);
+        box-shadow: 0 25px 35px -12px rgba(0, 30, 70, 0.6);
+       }
+
+       .news-featured-image {
+        width: 45%;
+        flex-shrink: 0;
+        overflow: hidden;
+       }
+
+       .news-featured-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+       }
+
+       .news-featured-body {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       }
+
+       .news-featured-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 0.75rem;
+       }
+
+       .news-featured-body p {
+        font-size: 0.95rem;
+        color: #a6b3d6;
+        line-height: 1.7;
+       }
+
+       .event-card {
+        background: rgba(12, 18, 28, 0.75);
+        backdrop-filter: blur(10px);
+        border-radius: 1.2rem;
+        border: 1px solid rgba(72, 120, 200, 0.35);
+        padding: 1.5rem;
+        display: flex;
+        gap: 1.2rem;
+        align-items: flex-start;
+        transition: transform 0.25s ease, box-shadow 0.25s;
+        margin-bottom: 1.2rem;
+       }
+
+       .event-card:hover {
+        transform: translateY(-4PX);
+        border-color: rgba(100, 160, 255, 0.7);
+        box-shadow: 0 25px 35px -12px rgba(0, 30, 70, 0.6);
+       }
+
+       .event-date-box {
+        background: rgba(62, 122, 217, 0.7);
+        border: 1px solid rgba(62, 122, 217, 0.2);
+        border-radius: 0.8rem;
+        padding: 0.6rem 1rem;
+        text-align: center;
+        min-width: 60px;
+        flex-shrink: 0;
+       }
+
+       .event-date-box .month {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #5a7ab5;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+       }
+
+       .event-info h4 {
+        font-size: 1rem;
+        color: #a6b3d6;
+        margin: 0 auto;
+       }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
 
         <div class="container"> 
+            <div class="logo-area">
+              <i class="fas fa-gamepad logo-icon">GG</i>
+              <span class="logo-text">GamerGrid</span>
+            </div>
 
-            <a class="navbar-brand" href="index.html">My Website</a> 
+            <a class="navbar-brand" href="index.html"></a> 
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
 
@@ -44,6 +284,10 @@
 
                     </li> 
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="news&events.html">News&Events</a>
+                    </li>
+
                     
                     <li class="nav-item"> 
 
@@ -70,50 +314,157 @@
     </nav>
 
 
-     <main>
-        <div class="main-title">Main Content</div>
+    <main>
+        <div class="main-content">
+            <div class="page-headline">
+                <h1>News & Events</h1>
+                <p>Stay up to date with the latest GamerGrid updates, patches, community news and upcoming events.</p>
+            </div>
 
-          <div class="news-box">
-            <h2>Latest News</h2>
-
-
-            <article>Gamergrid Server Update
-                <p>Our latest server uodate introduces improved performance, reduced latency,<br> and enhanced security features.
-                   Players can now enjoy smoother gameply and faster matchmacking across all supported games.
-                </p>
-                <smal>Posted: 12 April 2026 </smal>
-            </article>
-
-              <hr>
-
-                <article>
-                 <h3>New Community Features Launched</h3>
-                      <p>
-                       We have added new community tools being player profiles, discussions
-                       threads and custom badges. These updates aim to make interaction within
-                       GamerGrid more engaging and rewarding.
-                     </p>
-
-                        <small>Posted: 10 April 2026</small>
-                </article>
-             </hr>
-
-                <article>
-                    <h3>Scheduled Maintenance Notice</h3>
-                    <p>GamerGrid servers will undergo scheduled maintenance on the 20th April 2026.
-                       During the time, access may be limited. We appreciate your patience while we
-                       improve our services.
+            <div class="news-featured">
+                <div class="news-featured-image">
+                    <img src="" alt="Oblivion Remastered">
+                </div>
+                <div class="news-featured-body">
+                    <span class="news-tag tag-update">Featured</span>
+                    <h2>The Elder Scrolls IV Oblivion Remastered-Co-op Multiplayer Arrives</h2>
+                    <p>Oblivion is taking a new turn in the gaming industry with an online co-op multiplayer mode.
+                       Explore Cyrodil with friends, discover new maps and engage with smarter, more responsive NPC's 
+                       than ever before. The Shivering Isles expansion is also available in co-op for the first time.
                     </p>
-                    <small>Posted: 7th April 2026</small>
-                </article>
-          </div>
-             
-        </div>
+                    <span class="news-update">Posted: 14th April 2026</span>
+                </div>
+            </div>
 
-        <div class="events-box">
+            <div class="section-title">Latest News</div>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="news-card">
+                        <div class="news-card-image">
+                            <img src="" alt="Server update">
+                        </div>
+                        <div class="news-card-body">
+                            <span class="news-tag tag-update">Update</span>
+                            <h3>GamerGrid Server Update</h3>
+                            <p>
+                                Our latest server update introduces improved performance, reduced latency and enhanced security features for smoother gameplay.
+                            </p>
+                            <span class="news-date">Posted: 12 April 2026</span>
+                        </div>
+                    </div>
+                </div>
             
+
+            <div class="col-lg-3 col-md-6">
+                <div class="news-card">
+                    <div class="news-card-image">
+                        <img src="" alt="Community Features">
+                    </div>
+                    <div class="news-card-body">
+                        <span class="news-tag">Community</span>
+                        <h3>New Community Features Launched</h3>
+                        <p>Player profiles, discussion threads and custom badges have launched. Make your mark and connect with fellow gamers.</p>
+                        <span class="news-date">Posted: 10 April 2026</span>
+                    </div>
+                </div>
+            </div>
+
+
+             <div class="col-lg-3 col-md-6">
+                <div class="news-card">
+                    <div class="news-card-image">
+                        <img src="" alt="Maintenance">
+                    </div>
+                    <div class="news-card-body">
+                        <span class="news-tag">Notice</span>
+                        <h3>Scheduled Maintenance-20 April</h3>
+                        <p>GamerGrid servers will undergo scheduled maintenance on 20th April 2026. Access may be limited during this window.</p>
+                        <span class="news-date">Posted: 7 April 2026</span>
+                    </div>
+                </div>
+            </div>
+
+
+             <div class="col-lg-3 col-md-6">
+                <div class="news-card">
+                    <div class="news-card-image">
+                        <img src="" alt="Patch Update">
+                    </div>
+                    <div class="news-card-body">
+                        <span class="news-tag">Patch</span>
+                        <h3>Patch v2.1-PPerformance & Stability</h3>
+                        <p>Reduced lag, faster load times and smoother gameplay during peak hours. A better experience for the whole community.</p>
+                        <span class="news-date">Posted: 12 April 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+
+
+
+            <div class="section-title">Upcoming Events</div>
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">18</div>
+                    <div class="month">May</div>
+                </div>
+                <div class="event-info">
+                    <h4>GamerGrid Season 3 Launch Tournament</h4>
+                    <p>
+                        Compete across Assasin's Creed, Call of Duty and God of War. Cash prizes for top 3 teams. Registration opens May 10th.
+                    </p>
+                </div>
+            </div>
+
+
+              <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">25</div>
+                    <div class="month">May</div>
+                </div>
+                <div class="event-info">
+                    <h4>Community Game Night-GTA V Roleplay</h4>
+                    <p>
+                        Join the GamerGrid community for the hosted GTA V RP session. New members welcome. Server details sent on the day of the event.
+                    </p>
+                </div>
+            </div>
+
+
+
+              <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">01</div>
+                    <div class="month">Jun</div>
+                </div>
+                <div class="event-info">
+                    <h4>Oblivion Co-op Beta Weekend</h4>
+                    <p>
+                        Be among the first to test the new Oblivion Remarsted co-op mode. Sign up through the Community page to get early access.
+                    </p>
+                </div>
+            </div>
+
+
+
+              <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">14</div>
+                    <div class="month">Jun</div>
+                </div>
+                <div class="event-info">
+                    <h4>Naraka Bladepoint-Fated Class Championshiop</h4>
+                    <p>
+                        1v1 and squad brackets available. Hosted on the EU Centeral Frankfurt server. Spectator mode enabled for all members.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </main>
+
     <footer>
         <p>&copy; 2026 designed by Gabriel Ockhuizen</p>
     </footer>

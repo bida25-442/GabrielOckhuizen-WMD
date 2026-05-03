@@ -6,182 +6,297 @@
     <title>About Us</title>
 
     
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about{
+            flex: 1;
+            padding: 64px 0 80px;
+        }
+
+        .about-hero{
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .about-hero h1{
+            font-size: 3.4rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #ffffff, #8bbaff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+            letter-spacing: normal;
+        }
+
+        .about-hero .tagline {
+            font-size: 1.25rem;
+            color:#a6b3d6;
+            max-width: 650px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(78, 159, 255, 0.3);
+            display: inline-block;
+            padding-top: 12px;
+        }
+
+         .about-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+         }
+
+         .story-card {
+            background: rgba(18, 22, 32, 0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            padding: 40px 44px;
+            border: 1px solid rgba(78, 159, 255, 0.3);
+            transition: all 0.25s;
+            box-shadow: rgba(0, 0, 0, 0.4);
+         }
+
+         .story-card:hover{
+            border-color: rgba(78, 159, 255, 0.6);
+            background: rgba(22, 27, 40, 0.8);
+         }
+
+        .story-card h2{
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .story-card h2 span {
+            background: #1e2a47;
+            padding: 12px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #8bbaff;
+        }
+
+        .story-card p{
+            font-size: 1.1rem;
+            color: #cdd9ff;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .highlight-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 32px;
+            justify-content: space-between;
+        }
+
+        .stat-item {
+            background: #0f131e;
+            border-radius: 32px;
+            padding: 28px;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            border: solid #2a3448;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ff4d6d;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9aaacf;
+        }
+
+        .team-spirit {
+            background: linear-gradient(155deg, #10141f, #0b0f18);
+            border-radius: 48px;
+            padding: 48px 44px;
+            text-align: center;
+            border: 1px solid #2e3a55;
+        }
+        .team-spirit h3 {
+            font-size: 1.9rem;
+            margin-bottom: 16px;
+        }
+
+        .bottom-outline {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 32px;
+            background: transparent;
+            border: 2px solid #4e9fff;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #4e9fff;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .button-outline:hover {
+            background: #4e9fff;
+            color: #0a0c12;
+            box-shadow: 0 5px 12px rgba(78, 159, 255, 0.3);
+        }
+
+    </style>
+       
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <div class="logo-area">
+                    <i class="fas fa-gamepad logo-icon">GG</i>
+                    <span class="logo-text">GamerGrid</span>
+                </div>
 
-        <div class="container"> 
+                <a class="navbar-brand" href="index.html"></a>
 
-            <a class="navbar-brand" href="index.html">GAMERGRID</a> 
+                <buttton class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </buttton>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="navbar-nav">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
 
-                <span class="navbar-toggler-icon"></span> 
+                        <li class="navbar-nav">
+                            <a class="nav-link" href="about us.html">About Us</a>
+                        </li>
 
-            </button> 
+                        <li class="navbar-nav">
+                            <a class="nav-link" href="servers.html">Servers</a>
+                        </li>
 
-            <div class="collapse navbar-collapse" id="navbarNav"> 
+                        <li class="navbar-nav">
+                            <a class="nav-link" href="news&events.html">News&Events</a>
+                        </li>
 
-                <ul class="navbar-nav"> 
+                        <li class="navbar-nav">
+                            <a class="nav-link" href="community.html">Community</a>
+                        </li>
 
-                    <li class="nav-item"> 
+                        <li class="navbar-nav">
+                            <a class="nav-link" href="feedback.html">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
 
-                        <a class="nav-link" href="index.html">Home</a> 
-
-                    </li> 
-
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="servers.html">Servers</a> 
-
-                    </li> 
-
-                    
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="news&events.html">News&Events</a> 
-
-                    </li> 
-
-                    
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="community.html">Community</a> 
-
-                    </li> 
-
-                    
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="feedback.html">Feedback</a> 
-
-                    </li> 
-
-
-                </ul> 
-
-            </div> 
-
-        </div> 
-
-      </nav>  
-        
-    </nav>
+            </div>
+        </nav>
     </header>
-
-    
-
-
-    
-
-
+  <main>
+    <div class="main-content">
     <main class="about-main">
-    <div class="container">
-    
-        <div class="about-hero">
-            <h1>About Us</h1>
-            <div class="tagline">Built by gamers for the global grid.</div>
+        <div class="container">
+
+            <div class="about-hero">
+                <h1>About Us</h1>
+                <div class="tagline">Built by gamers across the globe for the global grid.</div>
+            </div>
         </div>
 
         <div class="about gamer-grid">
-        
-            <div class="story-card">
-                <h2>Who we are <span>since 2025</span></h2>
-                <p>GAMERGRID is not just another gaming platform — it is a thriving ecosystem where players, 
-                    creators, and competitors unite. 
-                    We started as a small Discord community and evolved into a cross-platform hub with thousands of daily active users. 
-                    Our mission is to deliver seamless server experiences, 
-                    epic events, and a genuine sense of belonging.</p>
-
-                <p>From casual late-night raids to competitive esports showdowns, 
-                    GAMERGRID provides the infrastructure, 
-                    energy, and support for every type of gamer. 
-                    We believe that gaming is more than a hobby — it is a culture, 
-                    and we are proud to be at the heart of it.</p>
-
-
-                <div class="highlight-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">25K+</div>
-                        <div class="stat-label">Active members</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">180+</div>
-                        <div class="stat-label">Game servers</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3.2M</div>
-                        <div class="stat-label">Monthly events played</div>
-                    </div>
-                </div>
-            </div>
-
-            
-
 
             <div class="story-card">
-                <h2>Our values & philosophy</h2>
-                <p>We are built on three core pillars: <strong class="highlight">Innovation</strong>,
-                                                       <strong class="highlight">Community first</strong>, and 
-                                                       <strong class="highlight">Competitive integrity</strong>. 
-                   Whether you're a streamer, a modder, or a weekend warrior, you will find your place on the Grid.
-                   Our team constantly curates fresh content, optimizes server performance, and listens to player 
-                   feedback to shape the future of online multiplayer.
-                </p>
-
-                <p>With custom matchmaking algorithms, 24/7 moderation, and a reward system that celebrates loyalty, 
-                   GAMERGRID has redefined what it means to be part of a gaming network.
-                   Transparency and respect drive every decision we make — from server patches to major seasonal events.
+                <h2>Who We Are <span>since 2025</span></h2>
+                <p>GAMERGRID is not like any other gaming platform- it is a thriving ecosystem where players,
+                   creators, and competitors unite.
+                   We started as a small Discord community and evolved into a cross-platform hub which houses
+                   thousands of active daily users.
+                   The mission of our platform is  to deliver a seamless server experience,
+                   epic events and a genuine sense of belonging.
                 </p>
                 
-            </div>
-
-            
-
-
-            <div class="team-spirit">
-                <h3>The minds behind the Grid</h3>
-                <p>Our crew consists of veteran esports organizers, 
-                   software engineers, and content creators who live and breathe games.
-                   We work remotely across 12 time zones to make sure GAMERGRID never sleeps. 
-                   Join our journey and help us shape the next generation of online gaming communities.
+                <p>From some of the most casual late-night raids to competitive esports showdowns,
+                   GAMERGRID provides the infrastructure,
+                   energy, and support for every type of gamer.
+                   We believe that gaming is more than just a hobby- it is a culture
+                   and we are proud to be at the heart of it.
+                </p>
                 </p>
             </div>
+        </div>
 
-            
-
-
-
-            <div class="story-card">
-                <h2>Your voice matters</h2>
-                <p>The FEEDBACK section isn't just a button — it's the backbone of our evolution. 
-                    Every suggestion, bug report, and feature request is reviewed by our core team. 
-                    From implementing new game modes to improving voice chat quality, 
-                    we are constantly iterating based on what YOU tell us.</p>
-
-                <p>Got a radical idea for the next big event? Want to moderate your favorite server? 
-                   Drop us a line via the FEEDBACK tab or join our Discord. The Grid belongs to its players.
-                </p>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-                    <span style="background:#949aa8; padding: 8px 18px; border-radius: 40px;">Town Halls</span>
-                    <span style="background:#959699; padding: 8px 18px; border-radius: 40px;">Community Awards</span>
-                    <span style="background:#9a9ca2; padding: 8px 18px; border-radius: 40px;">Beta Access</span>
+        <div class="about gamer-grid">
+            <div class="highlight-stats">
+                <div class="stat-item">
+                    <div class="stat-number">30+K</div>
+                    <div class="stat-label">Active members</div>
+                </div>
+                 <div class="stat-item">
+                    <div class="stat-number">180+K</div>
+                    <div class="stat-label">Game servers</div>
+                </div>
+                 <div class="stat-item">
+                    <div class="stat-number">2.2M</div>
+                    <div class="stat-label">Monthly events played</div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
 
+        <div class="story-card">
+            <h2>Our Beliefs & Values</h2>
+            <p>we are a society built on three pilars:
+                <strong class="highlight">Innovation</strong>, and
+                <strong class="highlight">Community first</strong>, and
+                <strong class="highlight">Competitive integrity</strong>.
+                Whether you're a streamer, a modder, or a weekend warrior, you will find your place on the Grid.
+                Our team constantly curates fresh content, optimizes server performance, and listens to player
+                feedback to shape the future of online multiplayer.
+            </p>
+            <p>with custom matchmaking algarithms, 24/7 moderation and a reward system that celebrates loyalty,
+               GAMERGRID has redefined what it means to be part of a gaming network.
+               Transparency and respect drive every decision we make-from server patches to major seasonal events.
+            </p>
+        </div>
+
+        <div class="team-spirit">
+            <h2>The minds behind the Grid</h2>
+            <p>Our crew consists of veteran esports organizers,
+               software engineers, and content creators who live and breath for games.
+               We work remotely across 12 time zones to make sure GAMERGRID never sleeps.
+               Join our journey and help us shape the next generation of online gaming communities. 
+            </p>
+        </div>
+
+        <div class="story-card">
+            <h2>Your Voice matters</h2>
+            <p>The FEEDBACK section isn't just a button - it's the backbone of our evolution.
+               Every suggestion, bug report, and feature request is reviewed by our own core team.
+               From implementing new game modes to improving voice chat quality,
+               we are constantly iteerating based on what YOU tell us.
+            </p>
+            <p>Got a radical new idea for the next big event? Want to moderate your favorite server?
+               Drop us a line Via the FEEDBACK tab or join our Discord. The Grid belongs to its players.
+            </p>
+
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
+                <span style="background: #949aa8; padding: 8px 18px; border-radius: 40px;">Town Hall</span>
+                <span style="background: #949aa8; padding: 8px 18px; border-radius: 40px;">Community Awards</span>
+                <span style="background: #949aa8; padding: 8px 18px; border-radius: 40px;">Beta Access</span>
+            </div>
+        </div>
+    </main>
+    </div>
+  </main>
 
     <footer>
         <p>&copy; 2026 designed by Gabriel Ockhuizen</p>
     </footer>
-
-    
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
 </body>

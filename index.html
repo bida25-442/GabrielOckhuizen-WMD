@@ -5,222 +5,499 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerGrid | Forge Your Gaming Legacy</title>
 
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="styles.css">
+     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      h1 {
+        font-size: 3.4rem;
+        font-weight: 800;
+        background: linear-gradient(125deg, #ffffff, #8bbaff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 16px;
+        letter-spacing: normal; 
+        }
+      .hero-section {
+        text-align: center;
+        }
+
+        .game-card-image img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-card-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 12px;
+        }
+
+        .row.g-4 > [class*="col-"] {
+            display: flex;
+        }
+
+        .featured-games-section {
+            padding: 2rem 0;
+        }
+
+        .game-card {
+            display:flex;
+            flex-direction: column;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+
+        }
+    </style>
+
+     
 </head>
 <body>
+     
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <div class="logo-area">
+                    <i class="fas fa-gamepad logo-icon">GG</i>
+                    <span class="logo-text">GamerGrid</span>
+                </div>
 
-      <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+                <a class="navbar-brand" href="index.html"></a>
 
-        <div class="container"> 
+                <buttton class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </buttton>
 
-            <a class="navbar-brand" href="index.html">GAMERGRID</a> 
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="about us.html">About Us</a>
+                        </li>
 
-                <span class="navbar-toggler-icon"></span> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="servers.html">Servers</a>
+                        </li>
 
-            </button> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="news&events.html">News&Events</a>
+                        </li>
 
-            <div class="collapse navbar-collapse" id="navbarNav"> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="community.html">Community</a>
+                        </li>
 
-                <ul class="navbar-nav"> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
 
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="index.html">Home</a> 
-
-                    </li> 
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="about us.html">About Us</a> 
-
-                    </li> 
-
-
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="servers.html">Servers</a> 
-
-                    </li> 
-
-                    
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="news&events.html">News&Events</a> 
-
-                    </li> 
-
-                    
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="community.html">Community</a> 
-
-                    </li> 
-
-                    
-                    <li class="nav-item"> 
-
-                        <a class="nav-link" href="feedback.html">Feedback</a> 
-
-                    </li> 
-
-
-                </ul> 
-
-            </div> 
-
-        </div> 
-
-      </nav>  
-        
-    </nav>
+            </div>
+        </nav>
     </header>
 
+    <main>
+    <div class="main-content">
+    <section class="hero-section">
+        <h1>WELCOME TO<br> GAMERGRID</h1>
+        <div class="hero-tagline">Forge Your gaming Legacy Now!</div>
+        <button class="cta-button" id="exploreBtn">
+            <i class="fas fa-rocket">EXPLORE OUR GAMES</i>
+            <a href="#featured-games"></a>
+        </button>
+    </section>
 
+    <div section="Introduction">
+    <p>
+        <h1>Glad you took the opportunity to view our gaming site.<br> Hope you can stay and be a member of our community.</h1>
+    </p>
+    </div>
 
-
-<main>
-
-
-</main>
-
-    <section class="hero-section"
-     style="display: flex;
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
-            min-height: 100vh; 
-            width: 100%;">
-    <h1 style="margin: 0 0 20px 0; font-size: 3rem;">Welcome To<br> GAMERGRID</h1>
-    <div class="hero-tagline" style="margin-bottom: 30px;
-                                     font-size: 1.2rem;">Forge Your Gaming Legacy Now!</div>
-    <button class="cta-button" id="exploreBtn" style="padding: 12px 24px; font-size: 1rem; cursor: pointer; border: none; background-color: #ff6b35; color: white; border-radius: 5px;">
-        <i class="fas fa-rocket"></i> EXPLORE OUR GAMES
-    </button>
-</section>
-
-
-
-
-
-
-
-   <section class="featured-games-section">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="game-card">
-                            <div class="game-card-badge"></div>
-                            <div class="game-card-image">
-                                <img src="" alt="Minecraft Survival" class="img-fluid">
-                                
-                            </div>
-                            <div class="game-card-content">
-                               
-                                <div class="game-tags">
-                                    <span class="badge bg-xbox">Xbox</span>
-                                    <span class="badge bg-pc">PC</span>
-                                    <span class="badge bg-mobile">Mobile</span>
-                                </div>
-                                <p class="game-description">
-                                    Vanilla survival, creative, and modded servers. Build, explore, and survive!
-                                </p>
-                                
-                            </div>
-                        </div>
+      
+    
+        <div class="main-content">
+    <section class="featured-games-section" id="featured-games">
+        <h1>Featured Games</h1>
+        <div class="row g-4 mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-badge"></div>
+                    <div class="game-card-image">
+                        <img src="C:\Users\bida25-442\Desktop\GabrielOckhuizen-WMD assignment\images\img-1.1.jpg" alt="Assasins Creed" class="img-fluid">
                     </div>
-                    
-                
-
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="game-card">
-                            <div class="game-card-image">
-                                <img src="" alt="Valheim Vikings" class="img-fluid">
-                               
-                            </div>
-                            <div class="game-card-content">
-                                
-                                <div class="game-tags">
-                                    <span class="badge bg-pc">PC</span>
-                                </div>
-                                <p class="game-description">
-                                    Viking survival with PvE and PvP servers. Regular boss raids and community builds.
-                                </p>
-                                
-                            </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <Span class="badge bg-xbox">xbox</Span>
+                            <span class="badge bg-pc">PC</span>
+                            <span class="badge bg-mobile">Mobile</span>
                         </div>
+                        <p class="game-description">
+                            Survive in the french Quarter, Complete argueus tasks, explore and survive!
+                        </p>
                     </div>
-                    
-                    
+                </div>
+            </div>
 
 
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="game-card featured-card">
-                            <div class="game-card-badge"></div>
-                            <div class="game-card-image">
-                                <img src="" alt="GTA V Roleplay" class="img-fluid">
-                                
-                            </div>
-                            <div class="game-card-content">
-                                
-                                <div class="game-tags">
-                                    <span class="badge bg-pc">PC</span>
-                                    <span class="badge bg-playstation">PS5</span>
-                                </div>
-                                <p class="game-description">
-                                    Serious roleplay with custom scripts, economy, and active staff.
-                                </p>
-                                
-                            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="C:\Users\bida25-442\Desktop\GabrielOckhuizen-WMD assignment\images\img-11.webp" alt="Valheim Vikings" class="img-fuid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <span class="badge bg-pc">PC</span>
                         </div>
-                    </div>
-                    
-                
-
-
-
-
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="game-card">
-                            <div class="game-card-image">
-                                <img src="" alt="Call of Duty" class="img-fluid">
-                                
-                            </div>
-                            <div class="game-card-content">
-                                
-                                <div class="game-tags">
-                                    <span class="badge bg-xbox">Xbox</span>
-                                    <span class="badge bg-pc">PC</span>
-                                </div>
-                                <p class="game-description">
-                                    Competitive and casual servers. Ranked matches and custom game modes.
-                                </p>
-                                
-                            </div>
+                        <div class>
+                            <p class="game-description">
+                               Viking survival with PvP and PvE servers. Regular boss raids and community builds. 
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+           
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-badge"></div>
+                    <div class="game-card-image">
+                        <img src="C:\Users\bida25-442\Desktop\GabrielOckhuizen-WMD assignment\images\img-8.avif" alt="GTA V Roleplay" class="img-fluid">
+                </div>
+                  <div class="game-card-content">
+                    <div class="game-tags">
+                        <span class="badge bg-pc">PC</span>
+                        <span class="badge bg-playstation">PS5</span>
+                                
+                    </div>
+                        <p class="game-description">
+                            Serious roleplay with  custom scripts, economy and active staff.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="C:\Users\bida25-442\Desktop\GabrielOckhuizen-WMD assignment\images\img 5.webp" alt="Call Of Duty" class="img-fluid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <span class="badge bg-xbox">xbox</span>
+                            <span class="badge bg-pc">PC</span>
+                        </div>
+                        <P>
+                           Competitive and casual servers. Ranked matches and custom game modes. 
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+       <div class="row g-4 mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-badge"></div>
+                    <div class="game-card-image">
+                        <img src="" alt="Apex Legends" class="img-fluid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <Span class="badge bg-xbox">xbox</Span>
+                            <span class="badge bg-pc">PC</span>
+                            <span class="badge bg-mobile">Mobile</span>
+                            <span class="badge bg-xbox">xbox</span>
+                        </div>
+                        <p class="game-description">
+                            Fast-paced battle royale with rich unique legends and abilities. Squad up and reign supreme.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="" alt="Red Dead Redemption 2" class="img-fuid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <span class="badge bg-pc">PC</span>
+                            <span class="badge bg-playstation">PS5</span>
+                        </div>
+                        <div class>
+                            <p class="game-description">
+                               Open world western adventure. Story-driven missions with stuning visuals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+           
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-badge"></div>
+                    <div class="game-card-image">
+                        <img src="" alt="Fortnite" class="img-fluid">
+                </div>
+                  <div class="game-card-content">
+                    <div class="game-tags">
+                        <span class="badge bg-pc">PC</span>
+                        <span class="badge bg-playstation">PS5</span>
+                        <span class="badge bg-xbox">xbox</span>
+                        
+                                
+                    </div>
+                        <p class="game-description">
+                            Build and battle in the iconic battle royale. Weeekly updates and live events.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="" alt="Elden Ring" class="img-fluid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <span class="badge bg-xbox">xbox</span>
+                            <span class="badge bg-pc">PC</span>
+                            <span class="badge bg-playstation">PS5</span>
+                        </div>
+                        <P>
+                            A brutal open-world RPG. Explore the lands between and face fearsome bosses.
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        
+       <div class="row g-4 mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-badge"></div>
+                    <div class="game-card-image">
+                        <img src="" alt="League Of Legends" class="img-fluid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <Span class="badge bg-xbox">xbox</Span>
+                            <span class="badge bg-pc">PC</span>
+                            <span class="badge bg-mobile">Mobile</span>
+                        </div>
+                        <p class="game-description">
+                            The world's biggest MOBA. Ranked seasons, tournaments and regular champion updates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="" alt="Cyberpunk 2077" class="img-fuid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <span class="badge bg-xbox">xbox</span>
+                            <span class="badge bg-pc">PC</span>
+                            <span class="badge bg-playstation">PS5</span>
+
+                        </div>
+                        <div class>
+                            <p class="game-description">
+                               Explore Night City in this action RPG. Rich story with muultiple endings. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+           
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-badge"></div>
+                    <div class="game-card-image">
+                        <img src="" alt="FIFA 25" class="img-fluid">
+                </div>
+                  <div class="game-card-content">
+                    <div class="game-tags">
+                        <span class="badge bg-pc">PC</span>
+                        <span class="badge bg-playstation">PS5</span>
+                        <span class="badge bg-mobile">Mobile</span>
+                                
+                    </div>
+                        <p class="game-description">
+                            The ultimate football experience. Ultimate team, career ode and online seasons.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="" alt="Halo Infinite" class="img-fluid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <span class="badge bg-xbox">xbox</span>
+                            <span class="badge bg-pc">PC</span>
+                        </div>
+                        <P>
+                           Master Chief returns. Free-to-play multiplayer with renked and social playlists.
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+          
+       <div class="row g-4 mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-badge"></div>
+                    <div class="game-card-image">
+                        <img src="" alt="God of War" class="img-fluid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <Span class="badge bg-xbox">xbox</Span>
+                            <span class="badge bg-pc">PC</span>
+                            <span class="badge bg-playstation">PS5</span>
+                        </div>
+                        <p class="game-description">
+                            Epic Norse mythology adventure. Kratos and Atreus battle gods and more monsters.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="" alt="Valorant" class="img-fuid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <span class="badge bg-xbox">xbox</span>
+                            <span class="badge bg-pc">PC</span>
+
+                        </div>
+                        <div class>
+                            <p class="game-description">
+                               Tactical 5v5 shooter with unique agent abilities. Competitive ranked ladder.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+           
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-badge"></div>
+                    <div class="game-card-image">
+                        <img src="" alt="The Witcher" class="img-fluid">
+                </div>
+                  <div class="game-card-content">
+                    <div class="game-tags">
+                        <span class="badge bg-pc">PC</span>
+                        <span class="badge bg-playstation">PS5</span>
+                        <span class="badge bg-xbox">xbox</span>
+                                
+                    </div>
+                        <p class="game-description">
+                            Massive open world RPG with rich storytelling. Hundreds of hours of content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="game-card-image">
+                        <img src="" alt="Tomb Raider" class="img-fluid">
+                    </div>
+                    <div class="game-card-content">
+                        <div class="game-tags">
+                            <span class="badge bg-xbox">xbox</span>
+                            <span class="badge bg-pc">PC</span>
+                            <span class="badge bg-playstation">PS5</span>
+                        </div>
+                        <P>
+                           Epic tomb raiding missions wnd survival. Lora Craft returns for her epic adventure on the Lost Island.
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
-
-
-
     
-    <P>feel free to brows our games.</P>
-
-    <div class="footer-section"></div>
+        </div>
+    </main>
     <footer>
         <p>&copy; 2026 designed by Gabriel Ockhuizen</p>
     </footer>
 
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
 </body>
 </html>
