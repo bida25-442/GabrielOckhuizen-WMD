@@ -273,6 +273,93 @@ footer {
   gap: 30px;
   align-items: center;
 }
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-content p {
+  color: #7e89b0;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-link {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+.social-link.discord {
+  background: rgba(88, 101, 242, 0.2);
+  border: 1px solid rgba(88, 101, 242, 0.5);
+  color: #7289da;
+}
+
+.social-link.discord:hover {
+  background: rgba(88, 101, 242, 0.4);
+  color: #ffffff;
+}
+
+.social-link.youtube {
+  background: rgba(255, 0, 0, 0.15);
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  color: #ff4444;
+}
+
+.social-link.youtube:hover {
+  background: rgba(255, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+.social-link.reddit {
+  background: rgba(255, 69, 0, 0.15);
+  border: 1px solid rgba(255, 69, 0, 0.4);
+  color: #ff6534;
+}
+
+.social-link.reddit:hover {
+  background: rgba(255, 69, 0, 0.3);
+  color: #ffffff;
+}
+
+.social-link.twitter {
+  background: rgba(29, 161, 242, 0.15);
+  border: 1px solid rgba(29, 161, 242, 0.4);
+  color: #1da1f2;
+}
+
+.social-link.twitter:hover {
+  background: rgba(29, 161, 242, 0.3);
+  color: #ffffff;
+}
+
+
+
+
+
+
+
     
 
     
